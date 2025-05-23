@@ -21,6 +21,7 @@ using Libreria.Infrastructure.Services;
 using Libreria.Application.Features.Usuario.Validators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using LibreriaApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -52,7 +53,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         var key = builder.Configuration["JwtSettings:Key"];
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = false ,
+            ValidateIssuer =false ,
             ValidateAudience = false ,
             ValidateLifetime = true ,
             ValidateIssuerSigningKey = true ,
@@ -116,6 +117,8 @@ if ( app.Environment.IsDevelopment() )
 }
 
 app.UseHttpsRedirection();
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseAuthentication();
 
 app.UseAuthorization();
 
