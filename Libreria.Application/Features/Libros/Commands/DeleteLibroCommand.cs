@@ -9,10 +9,21 @@ using System.Xml;
 using Libreria.Application.Features.Libros;
 using Libreria.Application.Features.Libros.Commands;
 using Libreria.Application.Features.Libros.Queries;
+using FluentValidation;
+using Libreria.Application.Features.Autores.Commands;
 
 namespace Libreria.Application.Features.Libros.Commands
 {
     public record DeleteLibroCommand(int Id):IRequest;
+
+    public class DeleteLibroValidator : AbstractValidator<DeleteAutorCommand>
+    {
+        public DeleteLibroValidator()
+        {
+            RuleFor(x => x.Id)
+               .GreaterThan(0).WithMessage("El ID del libro debe ser mayor que cero");
+        }
+    }
 
     public class DeleteLibroHandler : IRequestHandler<DeleteLibroCommand>
     {

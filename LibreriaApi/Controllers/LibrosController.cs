@@ -42,7 +42,7 @@ namespace LibreriaApi.Controllers
         }
 
         [HttpPut]
-        // [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(int id , [FromBody] LibroDto dto)
         {
             await _mediator.Send(new UpdateLibroCommand(id , dto));

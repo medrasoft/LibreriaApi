@@ -50,9 +50,9 @@ namespace LibreriaApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(int Id)
         {
-            await _mediator.Send(new DeleteAutorCommand(id));
+            await _mediator.Send(new DeleteAutorCommand(Id));
             return NoContent();
         }
     }

@@ -8,10 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using Libreria.Application.Features.Autores;
 using Libreria.Domain.Entidades;
+using FluentValidation;
 
 namespace Libreria.Application.Features.Autores.Commands
 {
     public record CrearAutorCommand(AutorDto Autor) : IRequest<int>;
+
+    public class CrearAutorValidator : AbstractValidator<AutorDto>
+    {
+        public CrearAutorValidator()
+        {
+            RuleFor(x => x.Nombre)
+               .NotEmpty().WithMessage("El nombre es obligatorio")
+               .MaximumLength(200).WithMessage("El nombre no puede superar los 200 caracteres");
+
+            RuleFor(x => x.Nacionalidad)
+                .NotEmpty().WithMessage("La Nacionalidad es obligatoria");
+        }
+    }
 
     public class CrearAutoroHandler : IRequestHandler<CrearAutorCommand , int>
     {
@@ -25,16 +39,10 @@ namespace Libreria.Application.Features.Autores.Commands
     
         public async Task<int> Handle(CrearAutorCommand request , CancellationToken cancellationToken)
         {
-            var libro = _mapper.Map<Libreria.Domain.Entidades.Autores>(request.Autor);
-
-            var autor=await _unitOfWork.Autores.GetByIdAsync(libro.AutorId);
-            if (autor == null)
-            {
-                throw new Exception("Autor no encontrado");
-            }
+            var autor = _mapper.Map<Libreria.Domain.Entidades.Autores>(request.Autor);
             await _unitOfWork.Autores.AddAsync(autor);
             await _unitOfWork.SaveChangesAsync();
-            return libro.AutorId;
+            return autor.AutorId;
 
         }
     }

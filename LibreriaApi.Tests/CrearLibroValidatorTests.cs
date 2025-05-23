@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Libreria.Application.Features.Libros.Validators;
+using Libreria.Application.Features.Libros.Commands;
 
 namespace LibreriaApi.Tests
 {
@@ -14,7 +14,7 @@ namespace LibreriaApi.Tests
         [Fact]
         public void Validator_InvalidData_ReturnsErrors()
         {
-            var validator = new LibroValidator();
+            var validator = new CrearLibroValidator();
 
             var result = validator.Validate(new CrearLibroCommand(new LibroDto
             {

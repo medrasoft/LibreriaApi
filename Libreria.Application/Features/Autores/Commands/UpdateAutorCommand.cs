@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FluentValidation;
 using Libreria.Domain.Interfaces;
 using MediatR;
 using System;
@@ -12,6 +13,24 @@ namespace Libreria.Application.Features.Autores.Commands
 {
     public  record UpdateAutorCommand(int Id, AutorDto Autor): IRequest;
 
+    public class UpdateAutoresValidator : AbstractValidator<UpdateAutorCommand>
+    {
+        public UpdateAutoresValidator()
+        {
+            RuleFor(x => x.Id)
+               .GreaterThan(0).WithMessage("El ID del libro debe ser mayor que cero");
+
+            RuleFor(x => x.Autor.AutorId)
+                .GreaterThan(0).WithMessage("El ID del libro debe ser mayor que cero");
+
+            RuleFor(x => x.Autor.Nombre)
+               .NotEmpty().WithMessage("El nombre es obligatorio")
+               .MaximumLength(200).WithMessage("El nombre no puede superar los 200 caracteres");
+
+            RuleFor(x => x.Autor.Nacionalidad)
+                .NotEmpty().WithMessage("La Nacionalidad es obligatoria");
+        }
+    }
     public class UpdateAutorHandler : IRequestHandler<UpdateAutorCommand>
     {
         private readonly IUnitOfWork _unitOfWork;

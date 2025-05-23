@@ -28,7 +28,6 @@ namespace Libreria.Application.Features.Prestamos.Commands
         {
              var prestamo = _mapper.Map<Libreria.Domain.Entidades.Prestamos>(request.prestamoDto);
              var libro = await _unitOfWork.Libros.GetByIdAsync(prestamo.LibroId);
-            // prestamo.FechaDevolucion = null;
              if ( libro == null )
                  throw new Exception("El libro no existe.");
 

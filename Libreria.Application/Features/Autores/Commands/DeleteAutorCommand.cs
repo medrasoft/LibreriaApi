@@ -1,4 +1,5 @@
-﻿using Libreria.Domain.Interfaces;
+﻿using FluentValidation;
+using Libreria.Domain.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,15 @@ using System.Xml;
 namespace Libreria.Application.Features.Autores.Commands
 {
     public record DeleteAutorCommand(int Id):IRequest;
+
+    public class DeleteAutorValidator : AbstractValidator<DeleteAutorCommand>
+    {
+        public DeleteAutorValidator()
+        {
+            RuleFor(x => x.Id)
+               .GreaterThan(0).WithMessage("El ID del autor debe ser mayor que cero");
+        }
+    }
 
     public class DeleteAutorHandler : IRequestHandler<DeleteAutorCommand>
     {
