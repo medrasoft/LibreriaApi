@@ -19,11 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria.Persistence", "Lib
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaApi.Tests", "LibreriaApi.Tests\LibreriaApi.Tests.csproj", "{DFC889F7-2034-40CB-A8C7-8AB74DAB60D2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptDb", "ScriptDb", "{35E6EA85-3962-4BEF-8F15-0FE7EF73D78B}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Documentos\Curriculo\cv actualizado\ScriptDB\ScriptDB.sql = ..\..\Documentos\Curriculo\cv actualizado\ScriptDB\ScriptDB.sql
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
