@@ -3,21 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaApi", "LibreriaApi\LibreriaApi.csproj", "{5CC6074D-9CF7-4646-B973-12D62418FFC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaApi", "LibreriaApi\LibreriaApi.csproj", "{5CC6074D-9CF7-4646-B973-12D62418FFC6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7439C02A-3278-464A-869F-CFCD32914298}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{86823755-0394-47FC-97C3-4009E504EC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria.Application", "Libreria.Application\Libreria.Application.csproj", "{08CEFDF0-69DE-4122-B7FF-623CF19DF8F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria.Application", "Libreria.Application\Libreria.Application.csproj", "{08CEFDF0-69DE-4122-B7FF-623CF19DF8F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria.Domain", "Libreria.Domain\Libreria.Domain.csproj", "{6CC6C598-11B2-4842-9D2D-5C0216BD28DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria.Domain", "Libreria.Domain\Libreria.Domain.csproj", "{6CC6C598-11B2-4842-9D2D-5C0216BD28DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria.Infrastructure", "Libreria.Infrastructure\Libreria.Infrastructure.csproj", "{16D4DF32-649E-4CF2-B814-F69CF4E7180B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria.Infrastructure", "Libreria.Infrastructure\Libreria.Infrastructure.csproj", "{16D4DF32-649E-4CF2-B814-F69CF4E7180B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Libreria.Persistence", "Libreria.Persistence\Libreria.Persistence.csproj", "{5E496DC6-4C73-4099-A1BA-4FD4C8A5FCC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libreria.Persistence", "Libreria.Persistence\Libreria.Persistence.csproj", "{5E496DC6-4C73-4099-A1BA-4FD4C8A5FCC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaApi.Tests", "LibreriaApi.Tests\LibreriaApi.Tests.csproj", "{DFC889F7-2034-40CB-A8C7-8AB74DAB60D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaApi.Tests", "LibreriaApi.Tests\LibreriaApi.Tests.csproj", "{DFC889F7-2034-40CB-A8C7-8AB74DAB60D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptDb", "ScriptDb", "{35E6EA85-3962-4BEF-8F15-0FE7EF73D78B}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\Documentos\Curriculo\cv actualizado\ScriptDB\ScriptDB.sql = ..\..\Documentos\Curriculo\cv actualizado\ScriptDB\ScriptDB.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
